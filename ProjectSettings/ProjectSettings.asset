@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 05d5535d4f898a2448d4ba1f4ce42940
+  productGUID: 45d75fb967ace724cb0f78b92ba141fa
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -844,10 +844,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 55fd22cf-4b37-4358-8077-fa64b5a15601
+  cloudProjectId: e5dd77d1-34a6-4651-bc65-a6e507eeac17
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Assignment4-CST480
+  projectName: Assignment4-CST480 2025-02-26_17-06-31
   organizationId: synthax
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
