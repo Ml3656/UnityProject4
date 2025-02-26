@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="pyroar" size="0.063500 0.088515" />
+    <ImageTarget name="pinsir" size="0.063500 0.088515" />
+    <ImageTarget name="regigigas" size="0.063500 0.088515" />
+    <ImageTarget name="dunsparce" size="0.063500 0.088515" />
+    <ImageTarget name="sylveon" size="0.063500 0.088515" />
+    <ImageTarget name="espeon" size="0.063500 0.088515" />
+    <ImageTarget name="glaceon" size="0.063500 0.088515" />
+    <ImageTarget name="suicune" size="0.063500 0.088515" />
+    <ImageTarget name="vaporeon" size="0.063500 0.088515" />
+    <ImageTarget name="eevee" size="0.063500 0.088583" />
+    <ImageTarget name="pikachu" size="0.063500 0.088641" />
+  </Tracking>
+</QCARConfig>
