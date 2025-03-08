@@ -25,7 +25,6 @@ public class BattleUIManager : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
     }
 
-    // Call this method when the button is pressed
     public void StartBattle()
     {
         battleButton.SetActive(false);
