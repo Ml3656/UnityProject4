@@ -47,7 +47,7 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         playerPokemon = new Pokemon("Pikachu", 100, 20, playerHealthBar);
-        enemyPokemon = new Pokemon("Charizard", 120, 25, enemyHealthBar);
+        enemyPokemon = new Pokemon("Vaporeon", 100, 20, enemyHealthBar);
     }
 
     public void PlayerAttack()
