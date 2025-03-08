@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class BattleManager : MonoBehaviour
 {
@@ -42,6 +43,10 @@ public class BattleManager : MonoBehaviour
     public Slider enemyHealthBar;
     public TMP_Text battleLog;
     public Button startBattleButton; // Reference to the Start Battle button
+    public Button playerAttack1;
+    public Button playerAttack2;
+    public Button enemyAttack1;
+    public Button enemyAttack2;
 
     private Pokemon playerPokemon;
     private Pokemon enemyPokemon;
@@ -60,6 +65,10 @@ public class BattleManager : MonoBehaviour
         playerPokemon = new Pokemon("Pikachu", 100, 20, playerHealthBar);
         enemyPokemon = new Pokemon("Vaporeon", 100, 20, enemyHealthBar);
         battleLog.text = "Battle Start! Pikachu goes first!";
+        playerAttack1.gameObject.SetActive(true);
+        playerAttack2.gameObject.SetActive(true);
+        enemyAttack1.gameObject.SetActive(false);
+        enemyAttack2.gameObject.SetActive(false);
     }
 
     public void PlayerAttack()
@@ -67,15 +76,28 @@ public class BattleManager : MonoBehaviour
         if (!isBattleStarted || !isPlayerTurn) return; // Prevent action if battle hasn’t started or it's not player's turn
 
         enemyPokemon.TakeDamage(playerPokemon.attackDamage);
-        battleLog.text = $"{playerPokemon.name} attacked! {enemyPokemon.name} has {enemyPokemon.currentHP} HP left.";
 
-        if (enemyPokemon.currentHP <= 0)
+        if (enemyPokemon.currentHP > 0)
         {
-            battleLog.text += $"\n{enemyPokemon.name} fainted!";
+            battleLog.text = $"{playerPokemon.name} attacked! {enemyPokemon.name} has {enemyPokemon.currentHP} HP left.";
+            SwitchTurn();
+            playerAttack1.gameObject.SetActive(false);
+            playerAttack2.gameObject.SetActive(false);
+            enemyAttack1.gameObject.SetActive(true);
+            enemyAttack2.gameObject.SetActive(true);
+        }
+        else if (enemyPokemon.currentHP <= 0)
+        {
+            battleLog.text = $"{enemyPokemon.name} fainted!";
+            playerAttack1.gameObject.SetActive(false);
+            playerAttack2.gameObject.SetActive(false);
+            enemyAttack1.gameObject.SetActive(false);
+            enemyAttack2.gameObject.SetActive(false);
         }
         else
         {
             SwitchTurn();
+            
         }
     }
 
@@ -84,15 +106,28 @@ public class BattleManager : MonoBehaviour
         if (!isBattleStarted || isPlayerTurn) return; // Prevent action if battle hasn’t started or it's not enemy's turn
 
         playerPokemon.TakeDamage(enemyPokemon.attackDamage);
-        battleLog.text = $"{enemyPokemon.name} attacked! {playerPokemon.name} has {playerPokemon.currentHP} HP left.";
 
-        if (playerPokemon.currentHP <= 0)
+        if(playerPokemon.currentHP > 0) 
         {
-            battleLog.text += $"\n{playerPokemon.name} fainted!";
+            battleLog.text = $"{enemyPokemon.name} attacked! {playerPokemon.name} has {playerPokemon.currentHP} HP left.";
+            SwitchTurn();
+            playerAttack1.gameObject.SetActive(true);
+            playerAttack2.gameObject.SetActive(true);
+            enemyAttack1.gameObject.SetActive(false);
+            enemyAttack2.gameObject.SetActive(false);
+        }
+        else if (playerPokemon.currentHP <= 0)
+        {
+            battleLog.text = $"{playerPokemon.name} fainted!";
+            playerAttack1.gameObject.SetActive(false);
+            playerAttack2.gameObject.SetActive(false);
+            enemyAttack1.gameObject.SetActive(false);
+            enemyAttack2.gameObject.SetActive(false);
         }
         else
         {
             SwitchTurn();
+            
         }
     }
 
