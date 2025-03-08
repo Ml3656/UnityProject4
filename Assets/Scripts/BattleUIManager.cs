@@ -3,17 +3,18 @@ using UnityEngine.UI;
 
 public class BattleUIManager : MonoBehaviour
 {
-    public GameObject battleButton; // Assign the "Battle" button
-    public GameObject pikachuBattleBar; // Assign Pikachu's battle bar
-    public GameObject vaporeonBattleBar; // Assign Vaporeon's battle bar
+    public GameObject battleButton; 
+    public GameObject pikachuBattleBar; 
+    public GameObject vaporeonBattleBar; 
     public GameObject pikachuTailWhap; 
     public GameObject pikachuThunder; 
     public GameObject vaporeonSpiralDrain; 
     public GameObject vaporeonFightingWhirlpool; 
+    public AudioSource audioSource;
+
 
     void Start()
     {
-        // Ensure only the button is visible at the start
         battleButton.SetActive(true);
         pikachuBattleBar.SetActive(false);
         vaporeonBattleBar.SetActive(false);
@@ -21,17 +22,22 @@ public class BattleUIManager : MonoBehaviour
         pikachuThunder.SetActive(false);
         vaporeonSpiralDrain.SetActive(false);
         vaporeonFightingWhirlpool.SetActive(false);
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Call this method when the button is pressed
     public void StartBattle()
     {
-        battleButton.SetActive(false); // Hide the battle button
-        pikachuBattleBar.SetActive(true); // Show Pikachu's battle bar
-        vaporeonBattleBar.SetActive(true); // Show Vaporeon's battle bar
+        battleButton.SetActive(false);
+        pikachuBattleBar.SetActive(true); 
+        vaporeonBattleBar.SetActive(true); 
         pikachuTailWhap.SetActive(true);
         pikachuThunder.SetActive(true);
         vaporeonSpiralDrain.SetActive(true);
         vaporeonFightingWhirlpool.SetActive(true);
+    }
+
+    public void PlayTrack(){
+        audioSource.Play();
     }
 }

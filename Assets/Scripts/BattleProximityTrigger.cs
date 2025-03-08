@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class BattleProximityTrigger : MonoBehaviour
 {
-    public GameObject pikachu; // Assign Pikachu GameObject
-    public GameObject vaporeon; // Assign Vaporeon GameObject
-    public GameObject battleButton; // Assign the Battle Button UI element
-
-    public float triggerDistance = 3.0f; // Adjust this to change the required proximity
-
+    public GameObject pikachu; 
+    public GameObject vaporeon; 
+    public GameObject battleButton; 
+    public float triggerDistance = 3.0f;
     void Start()
     {
-        battleButton.SetActive(false); // Hide the button initially
+        //battleButton.SetActive(false); 
     }
 
     void Update()
@@ -19,11 +17,11 @@ public class BattleProximityTrigger : MonoBehaviour
 
         if (distance <= triggerDistance)
         {
-            battleButton.SetActive(true); // Show the button when close
+            battleButton.SetActive(true); 
         }
         else
         {
-            battleButton.SetActive(false); // Hide the button when far apart
+            battleButton.SetActive(false);
         }
     }
 }
