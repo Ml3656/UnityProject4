@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class BattleManager : MonoBehaviour
 
     public Slider playerHealthBar;
     public Slider enemyHealthBar;
-    public Text battleLog;
+    public TMP_Text battleLog;
     public Button startBattleButton; // Reference to the Start Battle button
 
     private Pokemon playerPokemon;
@@ -49,7 +50,7 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        battleLog.text = "Press Start to begin the battle!";
+        battleLog.text = "Press Battle to begin!";
     }
 
     public void StartBattle()
